@@ -1,0 +1,201 @@
+student_id,interest
+S001,Deep Learning
+S001,Computer Vision
+S002,Distributed Systems
+S002,DevOps
+S003,DevOps
+S003,Cloud Computing
+S004,Analytics
+S004,Machine Learning
+S005,Data Science
+S005,Data Visualization
+S006,Cloud Computing
+S006,DevOps
+S007,Web Development
+S007,Mobile Development
+S008,Machine Learning
+S008,Data Science
+S009,Web Development
+S009,Cloud Computing
+S010,Cloud Security
+S010,Cybersecurity
+S011,LLMs
+S011,Machine Learning
+S012,Mobile Development
+S012,Web Development
+S013,Cloud Computing
+S013,DevOps
+S014,Computer Vision
+S014,Machine Learning
+S015,Cybersecurity
+S015,Cloud Security
+S016,Machine Learning
+S016,Generative AI
+S017,DevOps
+S017,Cloud Computing
+S018,Cloud Security
+S018,Cybersecurity
+S019,Networking
+S019,Cybersecurity
+S020,DevOps
+S020,Cloud Computing
+S021,Analytics
+S021,Data Science
+S022,LLMs
+S022,Computer Vision
+S023,Cloud Computing
+S023,Distributed Systems
+S024,Cloud Computing
+S024,Automation
+S025,DevOps
+S025,Automation
+S026,Automation
+S026,DevOps
+S027,Cloud Computing
+S027,Web Development
+S028,Computer Vision
+S028,Machine Learning
+S029,Analytics
+S029,Data Visualization
+S030,Databases
+S030,Cloud Computing
+S031,Computer Vision
+S031,Deep Learning
+S032,Cloud Computing
+S032,Web Development
+S033,DevOps
+S033,Distributed Systems
+S034,Machine Learning
+S034,Computer Vision
+S035,Machine Learning
+S035,Data Visualization
+S036,Cloud Computing
+S036,Automation
+S037,Cloud Computing
+S037,DevOps
+S038,Cloud Computing
+S038,Automation
+S039,Cloud Computing
+S039,DevOps
+S040,Cloud Computing
+S040,DevOps
+S041,Cloud Security
+S041,Networking
+S042,Generative AI
+S042,Computer Vision
+S043,Cybersecurity
+S043,Cloud Security
+S044,LLMs
+S044,Computer Vision
+S045,Analytics
+S045,Databases
+S046,Cloud Computing
+S046,Distributed Systems
+S047,DevOps
+S047,Cloud Computing
+S048,Computer Vision
+S048,NLP
+S049,Data Engineering
+S049,Databases
+S050,Automation
+S050,Cloud Computing
+S051,Analytics
+S051,Databases
+S052,DevOps
+S052,Cloud Computing
+S053,Databases
+S053,Data Engineering
+S054,Cloud Security
+S054,Networking
+S055,Distributed Systems
+S055,DevOps
+S056,Distributed Systems
+S056,Cloud Computing
+S057,Distributed Systems
+S057,Cloud Computing
+S058,DevOps
+S058,Cloud Computing
+S059,Distributed Systems
+S059,DevOps
+S060,NLP
+S060,Machine Learning
+S061,Machine Learning
+S061,Computer Vision
+S062,Machine Learning
+S062,Data Visualization
+S063,Distributed Systems
+S063,DevOps
+S064,Networking
+S064,Cybersecurity
+S065,Computer Vision
+S065,LLMs
+S066,Cybersecurity
+S066,Cloud Security
+S067,Cloud Computing
+S067,DevOps
+S068,Data Engineering
+S068,Analytics
+S069,Cloud Computing
+S069,DevOps
+S070,Machine Learning
+S070,Data Science
+S071,Data Engineering
+S071,Cloud Computing
+S072,Automation
+S072,Cloud Computing
+S073,Analytics
+S073,Data Visualization
+S074,DevOps
+S074,Cloud Computing
+S075,Distributed Systems
+S075,DevOps
+S076,Machine Learning
+S076,Computer Vision
+S077,Machine Learning
+S077,Generative AI
+S078,Cloud Security
+S078,Networking
+S079,Analytics
+S079,Data Engineering
+S080,Distributed Systems
+S080,Cloud Computing
+S081,LLMs
+S081,Generative AI
+S082,Data Science
+S082,Analytics
+S083,Data Visualization
+S083,Analytics
+S084,Cloud Computing
+S084,Mobile Development
+S085,NLP
+S085,Computer Vision
+S086,Databases
+S086,Cloud Computing
+S087,DevOps
+S087,Automation
+S088,Cloud Computing
+S088,Automation
+S089,Cloud Computing
+S089,Analytics
+S090,Cloud Computing
+S090,Distributed Systems
+S091,Computer Vision
+S091,Machine Learning
+S092,Computer Vision
+S092,Machine Learning
+S093,DevOps
+S093,Distributed Systems
+S094,Cloud Computing
+S094,Databases
+S095,Automation
+S095,Cloud Computing
+S096,NLP
+S096,Machine Learning
+S097,Data Engineering
+S097,Cloud Computing
+S098,Data Visualization
+S098,Machine Learning
+S099,Data Engineering
+S099,Databases
+S100,Cloud Computing
+S100,Web Development
