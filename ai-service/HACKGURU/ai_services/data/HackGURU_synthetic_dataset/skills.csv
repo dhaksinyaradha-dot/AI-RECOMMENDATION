@@ -1,0 +1,51 @@
+skill_id,skill_name,category
+SK001,Python,Programming
+SK002,Java,Programming
+SK003,JavaScript,Programming
+SK004,C++,Programming
+SK005,SQL,Database
+SK006,React,Web Development
+SK007,Node.js,Web Development
+SK008,HTML/CSS,Web Development
+SK009,Machine Learning,AI
+SK010,Deep Learning,AI
+SK011,Generative AI,AI
+SK012,NLP,AI
+SK013,Computer Vision,AI
+SK014,TensorFlow,AI
+SK015,PyTorch,AI
+SK016,Pandas,Data Science
+SK017,Scikit-learn,Data Science
+SK018,Data Visualization,Data Science
+SK019,AWS,Cloud
+SK020,Azure,Cloud
+SK021,Docker,DevOps
+SK022,Kubernetes,DevOps
+SK023,Linux,Systems
+SK024,Git,Tools
+SK025,GitHub,Tools
+SK026,Networking,Cybersecurity
+SK027,Ethical Hacking,Cybersecurity
+SK028,Cloud Security,Cybersecurity
+SK029,Figma,Design
+SK030,UI/UX,Design
+SK031,Flutter,Mobile
+SK032,Android,Mobile
+SK033,Data Structures,Programming
+SK034,Algorithms,Programming
+SK035,Blockchain,Emerging Tech
+SK036,IoT,Emerging Tech
+SK037,Robotics,Engineering
+SK038,Computer Networks,Cybersecurity
+SK039,Statistics,Data Science
+SK040,Power BI,Data Science
+SK041,Excel,Data Science
+SK042,Firebase,Cloud
+SK043,REST APIs,Web Development
+SK044,FastAPI,Web Development
+SK045,MongoDB,Database
+SK046,PostgreSQL,Database
+SK047,Prompt Engineering,AI
+SK048,LLMs,AI
+SK049,Data Engineering,Data Engineering
+SK050,ETL,Data Engineering

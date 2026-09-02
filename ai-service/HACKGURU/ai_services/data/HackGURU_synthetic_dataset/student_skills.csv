@@ -1,0 +1,701 @@
+student_id,skill_id,proficiency
+S001,SK009,2
+S001,SK024,3
+S001,SK005,2
+S001,SK001,2
+S001,SK010,2
+S001,"('SK048', 'LLMs', 'AI')",1
+S001,"('SK035', 'Blockchain', 'Emerging Tech')",1
+S002,SK024,2
+S002,SK022,1
+S002,SK021,1
+S002,SK023,2
+S002,SK019,2
+S002,"('SK014', 'TensorFlow', 'AI')",2
+S002,"('SK049', 'Data Engineering', 'Data Engineering')",2
+S003,SK024,1
+S003,SK019,3
+S003,SK028,2
+S003,SK020,2
+S003,SK022,2
+S003,"('SK006', 'React', 'Web Development')",1
+S003,"('SK015', 'PyTorch', 'AI')",2
+S004,SK016,2
+S004,SK039,2
+S004,SK018,1
+S004,SK005,3
+S004,SK041,2
+S004,"('SK021', 'Docker', 'DevOps')",2
+S004,"('SK050', 'ETL', 'Data Engineering')",1
+S005,SK005,4
+S005,SK039,3
+S005,SK018,2
+S005,SK016,2
+S005,SK017,2
+S005,"('SK038', 'Computer Networks', 'Cybersecurity')",3
+S005,"('SK028', 'Cloud Security', 'Cybersecurity')",2
+S006,SK024,3
+S006,SK019,3
+S006,SK021,3
+S006,SK043,1
+S006,SK023,3
+S006,"('SK044', 'FastAPI', 'Web Development')",2
+S006,"('SK035', 'Blockchain', 'Emerging Tech')",1
+S007,SK007,2
+S007,SK005,2
+S007,SK045,2
+S007,SK003,2
+S007,SK024,1
+S007,"('SK032', 'Android', 'Mobile')",1
+S007,"('SK002', 'Java', 'Programming')",3
+S008,SK005,3
+S008,SK018,2
+S008,SK041,2
+S008,SK016,2
+S008,SK039,2
+S008,"('SK043', 'REST APIs', 'Web Development')",1
+S008,"('SK042', 'Firebase', 'Cloud')",1
+S009,SK043,1
+S009,SK003,4
+S009,SK005,1
+S009,SK006,4
+S009,SK007,4
+S009,"('SK043', 'REST APIs', 'Web Development')",3
+S009,"('SK032', 'Android', 'Mobile')",2
+S010,SK023,1
+S010,SK026,2
+S010,SK038,2
+S010,SK024,1
+S010,SK027,4
+S010,"('SK047', 'Prompt Engineering', 'AI')",2
+S010,"('SK022', 'Kubernetes', 'DevOps')",1
+S011,SK009,3
+S011,SK011,1
+S011,SK010,1
+S011,SK047,2
+S011,SK005,1
+S011,"('SK031', 'Flutter', 'Mobile')",2
+S011,"('SK014', 'TensorFlow', 'AI')",2
+S012,SK043,1
+S012,SK003,2
+S012,SK045,1
+S012,SK005,1
+S012,SK008,2
+S012,"('SK033', 'Data Structures', 'Programming')",3
+S012,"('SK034', 'Algorithms', 'Programming')",1
+S013,SK019,3
+S013,SK022,4
+S013,SK043,2
+S013,SK021,3
+S013,SK024,3
+S013,"('SK026', 'Networking', 'Cybersecurity')",1
+S013,"('SK009', 'Machine Learning', 'AI')",1
+S014,SK010,2
+S014,SK009,4
+S014,SK015,3
+S014,SK024,2
+S014,SK014,3
+S014,"('SK042', 'Firebase', 'Cloud')",1
+S014,"('SK034', 'Algorithms', 'Programming')",1
+S015,SK038,3
+S015,SK023,1
+S015,SK028,1
+S015,SK026,3
+S015,SK024,1
+S015,"('SK041', 'Excel', 'Data Science')",3
+S015,"('SK028', 'Cloud Security', 'Cybersecurity')",2
+S016,SK005,1
+S016,SK010,3
+S016,SK001,2
+S016,SK047,1
+S016,SK048,2
+S016,"('SK003', 'JavaScript', 'Programming')",3
+S016,"('SK023', 'Linux', 'Systems')",2
+S017,SK022,3
+S017,SK021,3
+S017,SK023,3
+S017,SK024,2
+S017,SK043,1
+S017,"('SK015', 'PyTorch', 'AI')",1
+S017,"('SK013', 'Computer Vision', 'AI')",3
+S018,SK028,2
+S018,SK027,4
+S018,SK024,2
+S018,SK026,3
+S018,SK023,3
+S018,"('SK039', 'Statistics', 'Data Science')",3
+S018,"('SK028', 'Cloud Security', 'Cybersecurity')",1
+S019,SK024,2
+S019,SK028,3
+S019,SK038,3
+S019,SK023,2
+S019,SK026,3
+S019,"('SK047', 'Prompt Engineering', 'AI')",3
+S019,"('SK020', 'Azure', 'Cloud')",2
+S020,SK019,2
+S020,SK043,1
+S020,SK022,4
+S020,SK023,3
+S020,SK024,4
+S020,"('SK030', 'UI/UX', 'Design')",1
+S020,"('SK029', 'Figma', 'Design')",3
+S021,SK005,4
+S021,SK017,2
+S021,SK018,3
+S021,SK001,4
+S021,SK041,2
+S021,"('SK027', 'Ethical Hacking', 'Cybersecurity')",2
+S021,"('SK041', 'Excel', 'Data Science')",2
+S022,SK009,4
+S022,SK024,3
+S022,SK010,2
+S022,SK005,2
+S022,SK011,3
+S022,"('SK043', 'REST APIs', 'Web Development')",3
+S022,"('SK034', 'Algorithms', 'Programming')",3
+S023,SK024,1
+S023,SK020,2
+S023,SK021,2
+S023,SK022,2
+S023,SK019,4
+S023,"('SK046', 'PostgreSQL', 'Database')",1
+S023,"('SK019', 'AWS', 'Cloud')",1
+S024,SK023,4
+S024,SK021,2
+S024,SK022,4
+S024,SK043,2
+S024,SK019,2
+S024,"('SK050', 'ETL', 'Data Engineering')",1
+S024,"('SK038', 'Computer Networks', 'Cybersecurity')",2
+S025,SK023,4
+S025,SK019,3
+S025,SK043,1
+S025,SK024,3
+S025,SK021,4
+S025,"('SK030', 'UI/UX', 'Design')",3
+S025,"('SK009', 'Machine Learning', 'AI')",3
+S026,SK023,3
+S026,SK019,1
+S026,SK024,3
+S026,SK022,2
+S026,SK043,1
+S026,"('SK049', 'Data Engineering', 'Data Engineering')",2
+S026,"('SK027', 'Ethical Hacking', 'Cybersecurity')",1
+S027,SK006,2
+S027,SK005,3
+S027,SK024,3
+S027,SK008,4
+S027,SK007,4
+S027,"('SK050', 'ETL', 'Data Engineering')",1
+S027,"('SK024', 'Git', 'Tools')",1
+S028,SK005,3
+S028,SK010,3
+S028,SK014,3
+S028,SK001,3
+S028,SK024,1
+S028,"('SK003', 'JavaScript', 'Programming')",3
+S028,"('SK023', 'Linux', 'Systems')",3
+S029,SK039,4
+S029,SK018,2
+S029,SK016,3
+S029,SK017,2
+S029,SK005,2
+S029,"('SK028', 'Cloud Security', 'Cybersecurity')",2
+S029,"('SK047', 'Prompt Engineering', 'AI')",2
+S030,SK019,1
+S030,SK005,4
+S030,SK016,1
+S030,SK001,1
+S030,SK046,1
+S030,"('SK045', 'MongoDB', 'Database')",3
+S030,"('SK018', 'Data Visualization', 'Data Science')",2
+S031,SK015,2
+S031,SK005,3
+S031,SK009,4
+S031,SK010,3
+S031,SK024,2
+S031,"('SK038', 'Computer Networks', 'Cybersecurity')",3
+S031,"('SK024', 'Git', 'Tools')",3
+S032,SK007,4
+S032,SK006,4
+S032,SK045,2
+S032,SK008,2
+S032,SK024,1
+S032,"('SK047', 'Prompt Engineering', 'AI')",2
+S032,"('SK038', 'Computer Networks', 'Cybersecurity')",1
+S033,SK019,3
+S033,SK028,1
+S033,SK023,1
+S033,SK021,2
+S033,SK020,2
+S033,"('SK031', 'Flutter', 'Mobile')",1
+S033,"('SK029', 'Figma', 'Design')",1
+S034,SK014,2
+S034,SK015,2
+S034,SK024,3
+S034,SK009,3
+S034,SK010,3
+S034,"('SK025', 'GitHub', 'Tools')",3
+S034,"('SK029', 'Figma', 'Design')",3
+S035,SK018,3
+S035,SK001,3
+S035,SK005,3
+S035,SK039,2
+S035,SK041,1
+S035,"('SK029', 'Figma', 'Design')",2
+S035,"('SK045', 'MongoDB', 'Database')",3
+S036,SK043,2
+S036,SK022,4
+S036,SK019,3
+S036,SK021,4
+S036,SK023,3
+S036,"('SK004', 'C++', 'Programming')",2
+S036,"('SK011', 'Generative AI', 'AI')",1
+S037,SK021,3
+S037,SK043,1
+S037,SK022,2
+S037,SK019,2
+S037,SK024,4
+S037,"('SK049', 'Data Engineering', 'Data Engineering')",3
+S037,"('SK044', 'FastAPI', 'Web Development')",2
+S038,SK043,2
+S038,SK021,4
+S038,SK022,3
+S038,SK023,4
+S038,SK019,1
+S038,"('SK045', 'MongoDB', 'Database')",2
+S038,"('SK032', 'Android', 'Mobile')",1
+S039,SK024,2
+S039,SK019,2
+S039,SK023,4
+S039,SK043,1
+S039,SK022,3
+S039,"('SK049', 'Data Engineering', 'Data Engineering')",2
+S039,"('SK004', 'C++', 'Programming')",3
+S040,SK021,3
+S040,SK023,4
+S040,SK043,2
+S040,SK019,2
+S040,SK024,3
+S040,"('SK032', 'Android', 'Mobile')",2
+S040,"('SK046', 'PostgreSQL', 'Database')",1
+S041,SK026,4
+S041,SK028,2
+S041,SK038,3
+S041,SK023,2
+S041,SK027,4
+S041,"('SK010', 'Deep Learning', 'AI')",3
+S041,"('SK029', 'Figma', 'Design')",2
+S042,SK005,3
+S042,SK048,2
+S042,SK010,1
+S042,SK011,2
+S042,SK001,2
+S042,"('SK009', 'Machine Learning', 'AI')",3
+S042,"('SK033', 'Data Structures', 'Programming')",2
+S043,SK028,3
+S043,SK038,2
+S043,SK023,1
+S043,SK027,4
+S043,SK024,2
+S043,"('SK035', 'Blockchain', 'Emerging Tech')",1
+S043,"('SK003', 'JavaScript', 'Programming')",3
+S044,SK001,4
+S044,SK014,2
+S044,SK015,1
+S044,SK010,1
+S044,SK011,1
+S044,"('SK010', 'Deep Learning', 'AI')",1
+S044,"('SK016', 'Pandas', 'Data Science')",3
+S045,SK019,2
+S045,SK046,3
+S045,SK005,3
+S045,SK050,4
+S045,SK049,3
+S045,"('SK029', 'Figma', 'Design')",2
+S045,"('SK023', 'Linux', 'Systems')",2
+S046,SK028,1
+S046,SK024,3
+S046,SK022,2
+S046,SK021,2
+S046,SK019,2
+S046,"('SK037', 'Robotics', 'Engineering')",3
+S046,"('SK044', 'FastAPI', 'Web Development')",2
+S047,SK023,2
+S047,SK021,1
+S047,SK020,1
+S047,SK019,2
+S047,SK028,2
+S047,"('SK021', 'Docker', 'DevOps')",3
+S047,"('SK048', 'LLMs', 'AI')",3
+S048,SK024,2
+S048,SK005,3
+S048,SK015,1
+S048,SK010,3
+S048,SK001,3
+S048,"('SK026', 'Networking', 'Cybersecurity')",3
+S048,"('SK001', 'Python', 'Programming')",3
+S049,SK001,2
+S049,SK050,2
+S049,SK049,2
+S049,SK046,1
+S049,SK005,2
+S049,"('SK020', 'Azure', 'Cloud')",2
+S049,"('SK042', 'Firebase', 'Cloud')",2
+S050,SK043,2
+S050,SK021,2
+S050,SK023,3
+S050,SK019,2
+S050,SK022,2
+S050,"('SK018', 'Data Visualization', 'Data Science')",2
+S050,"('SK003', 'JavaScript', 'Programming')",1
+S051,SK016,1
+S051,SK019,1
+S051,SK001,1
+S051,SK049,4
+S051,SK046,1
+S051,"('SK022', 'Kubernetes', 'DevOps')",3
+S051,"('SK016', 'Pandas', 'Data Science')",1
+S052,SK024,2
+S052,SK019,2
+S052,SK020,1
+S052,SK028,2
+S052,SK023,1
+S052,"('SK016', 'Pandas', 'Data Science')",1
+S052,"('SK038', 'Computer Networks', 'Cybersecurity')",3
+S053,SK001,1
+S053,SK049,3
+S053,SK019,2
+S053,SK005,3
+S053,SK050,4
+S053,"('SK042', 'Firebase', 'Cloud')",1
+S053,"('SK002', 'Java', 'Programming')",2
+S054,SK023,3
+S054,SK038,4
+S054,SK024,1
+S054,SK026,3
+S054,SK028,2
+S054,"('SK042', 'Firebase', 'Cloud')",1
+S054,"('SK050', 'ETL', 'Data Engineering')",2
+S055,SK024,1
+S055,SK022,2
+S055,SK019,2
+S055,SK023,3
+S055,SK028,1
+S055,"('SK006', 'React', 'Web Development')",3
+S055,"('SK028', 'Cloud Security', 'Cybersecurity')",3
+S056,SK019,2
+S056,SK023,1
+S056,SK024,2
+S056,SK020,3
+S056,SK028,2
+S056,"('SK043', 'REST APIs', 'Web Development')",1
+S056,"('SK031', 'Flutter', 'Mobile')",2
+S057,SK021,1
+S057,SK019,2
+S057,SK020,3
+S057,SK023,3
+S057,SK028,1
+S057,"('SK043', 'REST APIs', 'Web Development')",1
+S057,"('SK026', 'Networking', 'Cybersecurity')",3
+S058,SK019,3
+S058,SK020,3
+S058,SK024,2
+S058,SK028,2
+S058,SK021,3
+S058,"('SK006', 'React', 'Web Development')",2
+S058,"('SK018', 'Data Visualization', 'Data Science')",2
+S059,SK022,1
+S059,SK023,2
+S059,SK019,3
+S059,SK024,2
+S059,SK028,1
+S059,"('SK020', 'Azure', 'Cloud')",1
+S059,"('SK014', 'TensorFlow', 'AI')",2
+S060,SK015,3
+S060,SK001,3
+S060,SK024,3
+S060,SK005,3
+S060,SK009,3
+S060,"('SK037', 'Robotics', 'Engineering')",2
+S060,"('SK028', 'Cloud Security', 'Cybersecurity')",1
+S061,SK014,2
+S061,SK015,1
+S061,SK024,2
+S061,SK001,2
+S061,SK009,2
+S061,"('SK020', 'Azure', 'Cloud')",3
+S061,"('SK048', 'LLMs', 'AI')",3
+S062,SK005,3
+S062,SK018,2
+S062,SK041,2
+S062,SK001,4
+S062,SK017,4
+S062,"('SK050', 'ETL', 'Data Engineering')",3
+S062,"('SK041', 'Excel', 'Data Science')",3
+S063,SK021,1
+S063,SK023,2
+S063,SK019,3
+S063,SK028,1
+S063,SK020,3
+S063,"('SK029', 'Figma', 'Design')",1
+S063,"('SK003', 'JavaScript', 'Programming')",3
+S064,SK026,2
+S064,SK023,1
+S064,SK024,1
+S064,SK027,4
+S064,SK038,3
+S064,"('SK033', 'Data Structures', 'Programming')",2
+S064,"('SK042', 'Firebase', 'Cloud')",3
+S065,SK015,1
+S065,SK009,3
+S065,SK005,1
+S065,SK010,3
+S065,SK024,3
+S065,"('SK047', 'Prompt Engineering', 'AI')",1
+S065,"('SK043', 'REST APIs', 'Web Development')",2
+S066,SK024,1
+S066,SK023,2
+S066,SK028,2
+S066,SK026,2
+S066,SK027,2
+S066,"('SK020', 'Azure', 'Cloud')",1
+S066,"('SK012', 'NLP', 'AI')",1
+S067,SK022,3
+S067,SK024,4
+S067,SK043,1
+S067,SK019,2
+S067,SK023,4
+S067,"('SK003', 'JavaScript', 'Programming')",2
+S067,"('SK027', 'Ethical Hacking', 'Cybersecurity')",3
+S068,SK001,2
+S068,SK019,1
+S068,SK046,3
+S068,SK050,3
+S068,SK049,3
+S068,"('SK039', 'Statistics', 'Data Science')",3
+S068,"('SK009', 'Machine Learning', 'AI')",1
+S069,SK023,3
+S069,SK019,1
+S069,SK021,3
+S069,SK022,2
+S069,SK043,2
+S069,"('SK026', 'Networking', 'Cybersecurity')",1
+S069,"('SK033', 'Data Structures', 'Programming')",1
+S070,SK018,3
+S070,SK001,4
+S070,SK039,4
+S070,SK041,2
+S070,SK005,2
+S070,"('SK014', 'TensorFlow', 'AI')",2
+S070,"('SK010', 'Deep Learning', 'AI')",1
+S071,SK016,2
+S071,SK001,1
+S071,SK019,2
+S071,SK050,2
+S071,SK005,4
+S071,"('SK010', 'Deep Learning', 'AI')",2
+S071,"('SK019', 'AWS', 'Cloud')",1
+S072,SK043,1
+S072,SK021,4
+S072,SK019,3
+S072,SK024,3
+S072,SK022,2
+S072,"('SK016', 'Pandas', 'Data Science')",1
+S072,"('SK047', 'Prompt Engineering', 'AI')",2
+S073,SK001,3
+S073,SK016,4
+S073,SK005,3
+S073,SK041,2
+S073,SK017,3
+S073,"('SK003', 'JavaScript', 'Programming')",1
+S073,"('SK021', 'Docker', 'DevOps')",3
+S074,SK023,3
+S074,SK019,1
+S074,SK022,4
+S074,SK043,2
+S074,SK024,2
+S074,"('SK024', 'Git', 'Tools')",2
+S074,"('SK034', 'Algorithms', 'Programming')",3
+S075,SK020,2
+S075,SK024,3
+S075,SK022,2
+S075,SK021,2
+S075,SK028,1
+S075,"('SK003', 'JavaScript', 'Programming')",1
+S075,"('SK047', 'Prompt Engineering', 'AI')",3
+S076,SK011,1
+S076,SK015,2
+S076,SK047,2
+S076,SK048,2
+S076,SK014,2
+S076,"('SK003', 'JavaScript', 'Programming')",1
+S076,"('SK039', 'Statistics', 'Data Science')",3
+S077,SK047,1
+S077,SK005,3
+S077,SK009,3
+S077,SK010,3
+S077,SK048,2
+S077,"('SK046', 'PostgreSQL', 'Database')",1
+S077,"('SK029', 'Figma', 'Design')",1
+S078,SK028,1
+S078,SK027,2
+S078,SK038,3
+S078,SK023,1
+S078,SK026,3
+S078,"('SK008', 'HTML/CSS', 'Web Development')",3
+S078,"('SK013', 'Computer Vision', 'AI')",3
+S079,SK019,1
+S079,SK046,2
+S079,SK001,2
+S079,SK049,4
+S079,SK016,3
+S079,"('SK021', 'Docker', 'DevOps')",2
+S079,"('SK042', 'Firebase', 'Cloud')",1
+S080,SK021,2
+S080,SK024,1
+S080,SK020,3
+S080,SK028,2
+S080,SK022,1
+S080,"('SK019', 'AWS', 'Cloud')",3
+S080,"('SK006', 'React', 'Web Development')",2
+S081,SK001,4
+S081,SK014,1
+S081,SK011,2
+S081,SK005,3
+S081,SK047,2
+S081,"('SK027', 'Ethical Hacking', 'Cybersecurity')",3
+S081,"('SK040', 'Power BI', 'Data Science')",2
+S082,SK017,4
+S082,SK041,2
+S082,SK005,4
+S082,SK016,3
+S082,SK039,3
+S082,"('SK010', 'Deep Learning', 'AI')",1
+S082,"('SK021', 'Docker', 'DevOps')",2
+S083,SK016,4
+S083,SK017,4
+S083,SK018,2
+S083,SK039,2
+S083,SK001,2
+S083,"('SK011', 'Generative AI', 'AI')",2
+S083,"('SK021', 'Docker', 'DevOps')",3
+S084,SK003,2
+S084,SK024,1
+S084,SK007,3
+S084,SK008,2
+S084,SK005,2
+S084,"('SK019', 'AWS', 'Cloud')",3
+S084,"('SK035', 'Blockchain', 'Emerging Tech')",2
+S085,SK024,2
+S085,SK014,2
+S085,SK010,4
+S085,SK001,3
+S085,SK015,1
+S085,"('SK007', 'Node.js', 'Web Development')",1
+S085,"('SK026', 'Networking', 'Cybersecurity')",3
+S086,SK050,2
+S086,SK001,2
+S086,SK016,3
+S086,SK019,2
+S086,SK046,3
+S086,"('SK040', 'Power BI', 'Data Science')",2
+S086,"('SK021', 'Docker', 'DevOps')",3
+S087,SK024,4
+S087,SK023,3
+S087,SK019,1
+S087,SK043,2
+S087,SK021,2
+S087,"('SK047', 'Prompt Engineering', 'AI')",3
+S087,"('SK004', 'C++', 'Programming')",1
+S088,SK024,4
+S088,SK043,1
+S088,SK023,4
+S088,SK019,2
+S088,SK021,4
+S088,"('SK046', 'PostgreSQL', 'Database')",2
+S088,"('SK009', 'Machine Learning', 'AI')",3
+S089,SK005,4
+S089,SK001,1
+S089,SK019,2
+S089,SK050,3
+S089,SK046,2
+S089,"('SK050', 'ETL', 'Data Engineering')",2
+S089,"('SK019', 'AWS', 'Cloud')",3
+S090,SK024,2
+S090,SK019,2
+S090,SK021,1
+S090,SK022,2
+S090,SK023,3
+S090,"('SK017', 'Scikit-learn', 'Data Science')",3
+S090,"('SK048', 'LLMs', 'AI')",2
+S091,SK015,1
+S091,SK024,2
+S091,SK009,4
+S091,SK048,2
+S091,SK047,2
+S091,"('SK001', 'Python', 'Programming')",3
+S091,"('SK036', 'IoT', 'Emerging Tech')",1
+S092,SK010,2
+S092,SK001,2
+S092,SK005,1
+S092,SK024,2
+S092,SK011,3
+S092,"('SK012', 'NLP', 'AI')",3
+S092,"('SK048', 'LLMs', 'AI')",1
+S093,SK021,3
+S093,SK020,2
+S093,SK022,2
+S093,SK028,1
+S093,SK023,1
+S093,"('SK012', 'NLP', 'AI')",3
+S093,"('SK001', 'Python', 'Programming')",3
+S094,SK049,3
+S094,SK005,3
+S094,SK046,3
+S094,SK050,4
+S094,SK001,3
+S094,"('SK049', 'Data Engineering', 'Data Engineering')",1
+S094,"('SK018', 'Data Visualization', 'Data Science')",2
+S095,SK043,2
+S095,SK021,2
+S095,SK019,2
+S095,SK022,4
+S095,SK024,4
+S095,"('SK015', 'PyTorch', 'AI')",2
+S095,"('SK009', 'Machine Learning', 'AI')",2
+S096,SK024,1
+S096,SK014,2
+S096,SK005,3
+S096,SK009,3
+S096,SK010,2
+S096,"('SK035', 'Blockchain', 'Emerging Tech')",3
+S096,"('SK010', 'Deep Learning', 'AI')",1
+S097,SK016,1
+S097,SK005,4
+S097,SK049,2
+S097,SK046,1
+S097,SK050,3
+S097,"('SK001', 'Python', 'Programming')",2
+S097,"('SK048', 'LLMs', 'AI')",3
+S098,SK016,4
+S098,SK017,4
+S098,SK039,2
+S098,SK018,3
+S098,SK005,3
+S098,"('SK006', 'React', 'Web Development')",1
+S098,"('SK044', 'FastAPI', 'Web Development')",1
+S099,SK001,2
+S099,SK046,1
+S099,SK050,4
+S099,SK019,1
+S099,SK016,1
+S099,"('SK023', 'Linux', 'Systems')",3
+S099,"('SK010', 'Deep Learning', 'AI')",2
+S100,SK024,2
+S100,SK006,2
+S100,SK005,3
+S100,SK045,2
+S100,SK003,4
+S100,"('SK009', 'Machine Learning', 'AI')",3
+S100,"('SK033', 'Data Structures', 'Programming')",3
