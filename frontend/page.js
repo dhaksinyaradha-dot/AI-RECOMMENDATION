@@ -1,63 +1,32 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://10.115.217.175:5000";
 
-export default function Recommendations() {
-  const [profile, setProfile] = useState(null);
-  const [events, setEvents] = useState([]);
+export default function EventPage() {
+  const params = useParams();
+  const eventId = params?.eventId;
+
+  const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    async function getRecommendations() {
+    async function getEvent() {
       try {
         setLoading(true);
         setError("");
 
-        // -----------------------------------------
-        // Get student profile from localStorage
-        // -----------------------------------------
-        const savedProfile = localStorage.getItem("studentProfile");
-
-        if (!savedProfile) {
-          throw new Error("Student profile not found.");
+        if (!eventId) {
+          throw new Error("Event ID not found.");
         }
 
-        const studentProfile = JSON.parse(savedProfile);
-        setProfile(studentProfile);
+        const url = `${API_URL}/api/events/${encodeURIComponent(eventId)}`;
 
-        // -----------------------------------------
-        // Get student ID
-        // -----------------------------------------
-        const studentId =
-          studentProfile.student_id ||
-          studentProfile.studentId ||
-          studentProfile.id;
-
-        if (!studentId) {
-          throw new Error("Student ID not found in profile.");
-        }
-
-        // -----------------------------------------
-        // Check API URL
-        // -----------------------------------------
-        if (!API_URL) {
-          throw new Error(
-            "NEXT_PUBLIC_API_URL is not configured."
-          );
-        }
-
-        // -----------------------------------------
-        // Backend endpoint
-        //
-        // GET /api/recommendations/:studentId
-        // -----------------------------------------
-        const url =
-          `${API_URL}/api/recommendations/${encodeURIComponent(studentId)}`;
-
-        console.log("Fetching recommendations from:", url);
+        console.log("Fetching event from:", url);
 
         const response = await fetch(url, {
           method: "GET",
@@ -67,9 +36,6 @@ export default function Recommendations() {
           cache: "no-store",
         });
 
-        // -----------------------------------------
-        // Handle backend errors
-        // -----------------------------------------
         if (!response.ok) {
           let message = `Backend request failed: ${response.status}`;
 
@@ -86,72 +52,57 @@ export default function Recommendations() {
           throw new Error(message);
         }
 
-        // -----------------------------------------
-        // Convert response to JSON
-        // -----------------------------------------
         const data = await response.json();
 
-        console.log("Backend recommendation response:", data);
+        console.log("Backend event response:", data);
 
-        // -----------------------------------------
-        // Check recommendations
-        // -----------------------------------------
-        if (!Array.isArray(data.recommendations)) {
-          throw new Error(
-            "Invalid response from recommendation API."
-          );
-        }
-
-        setEvents(data.recommendations);
+        setEvent(data);
       } catch (err) {
-        console.error("Error fetching recommendations:", err);
+        console.error("Error fetching event:", err);
 
         setError(
-          err.message || "Unable to load recommendations."
+          err.message || "Unable to load event details."
         );
       } finally {
         setLoading(false);
       }
     }
 
-    getRecommendations();
-  }, []);
+    getEvent();
+  }, [eventId]);
 
   // =====================================================
-  // LOADING SCREEN
+  // LOADING
   // =====================================================
 
   if (loading) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-white">
         <div className="px-6 text-center">
-
           <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-purple-100 border-t-purple-600"></div>
 
           <h2 className="mt-6 text-2xl font-bold text-slate-900">
-            Finding the best events for you...
+            Loading event...
           </h2>
 
           <p className="mt-2 text-slate-500">
-            Analyzing your skills, interests and career goals.
+            Getting the event details for you.
           </p>
-
         </div>
       </main>
     );
   }
 
   // =====================================================
-  // ERROR SCREEN
+  // ERROR
   // =====================================================
 
   if (error) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-white">
         <div className="max-w-xl px-6 text-center">
-
           <h2 className="text-3xl font-bold text-slate-900">
-            Unable to load recommendations
+            Unable to load event
           </h2>
 
           <p className="mt-4 text-slate-500">
@@ -160,11 +111,19 @@ export default function Recommendations() {
 
           <div className="mt-6 rounded-2xl bg-slate-100 p-4 text-left text-sm">
             <p className="font-semibold text-slate-700">
-              API URL:
+              Event ID
+            </p>
+
+            <p className="mt-1 text-slate-500">
+              {eventId || "Not found"}
+            </p>
+
+            <p className="mt-4 font-semibold text-slate-700">
+              API URL
             </p>
 
             <p className="mt-1 break-all text-slate-500">
-              {API_URL || "Not configured"}
+              {API_URL}
             </p>
           </div>
 
@@ -175,10 +134,57 @@ export default function Recommendations() {
             Try Again
           </button>
 
+          <a
+            href="/recommendations"
+            className="ml-3 inline-block rounded-xl bg-purple-100 px-6 py-3 font-semibold text-purple-700 transition hover:bg-purple-200"
+          >
+            Back to Recommendations
+          </a>
         </div>
       </main>
     );
   }
+
+  if (!event) {
+    return null;
+  }
+
+  // =====================================================
+  // FORMAT DATE
+  // =====================================================
+
+  const formattedStartDate = event.start_date
+    ? new Date(event.start_date).toLocaleDateString(
+        "en-IN",
+        {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        }
+      )
+    : "Not specified";
+
+  const formattedEndDate = event.end_date
+    ? new Date(event.end_date).toLocaleDateString(
+        "en-IN",
+        {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        }
+      )
+    : "Not specified";
+
+  // =====================================================
+  // COST
+  // =====================================================
+
+  const cost =
+    event.cost_inr !== null &&
+    event.cost_inr !== undefined &&
+    event.cost_inr !== ""
+      ? `₹${Number(event.cost_inr).toFixed(2)}`
+      : "Free";
 
   // =====================================================
   // MAIN PAGE
@@ -192,251 +198,241 @@ export default function Recommendations() {
       ================================================= */}
 
       <nav className="flex items-center justify-between border-b border-purple-100 bg-white px-8 py-5 shadow-sm">
-
         <h1 className="text-2xl font-bold text-purple-700">
           HackGURU
         </h1>
 
         <a
-          href="/profile"
+          href="/recommendations"
           className="rounded-full bg-purple-100 px-6 py-3 font-semibold text-purple-700 transition hover:bg-purple-200"
         >
-          Edit Profile
+          Back to Recommendations
         </a>
-
       </nav>
 
 
       {/* =================================================
-          HEADER
+          EVENT DETAILS
       ================================================= */}
 
-      <section className="px-6 pb-8 pt-14">
+      <section className="px-6 py-14">
+        <div className="mx-auto max-w-5xl">
 
-        <div className="mx-auto max-w-6xl">
+          {/* Event type */}
 
-          <p className="text-sm font-semibold uppercase tracking-widest text-purple-600">
-            AI Recommendations
-          </p>
+          <span className="inline-block rounded-full bg-purple-100 px-4 py-2 text-sm font-semibold text-purple-700">
+            {event.event_type || "Event"}
+          </span>
 
-          <h2 className="mt-3 text-4xl font-bold md:text-5xl">
-            {profile?.name
-              ? `${profile.name}, events picked for you`
-              : "Events picked for you"}
+
+          {/* Title */}
+
+          <h2 className="mt-5 text-4xl font-bold tracking-tight md:text-5xl">
+            {event.title}
           </h2>
 
-          <p className="mt-4 max-w-2xl text-lg text-slate-500">
-            Based on your skills, interests, career goals and preferences.
-          </p>
 
-        </div>
+          {/* Domain */}
 
-      </section>
+          {event.domain && (
+            <p className="mt-4 text-lg font-semibold text-purple-600">
+              {event.domain}
+            </p>
+          )}
 
 
-      {/* =================================================
-          NO EVENTS
-      ================================================= */}
+          {/* Description */}
 
-      {events.length === 0 && (
-        <section className="px-6 pb-16">
-
-          <div className="mx-auto max-w-6xl rounded-3xl border border-purple-100 bg-purple-50 p-10 text-center">
-
+          <div className="mt-8 rounded-3xl border border-purple-100 bg-white p-8 shadow-lg shadow-purple-100">
             <h3 className="text-2xl font-bold">
-              No recommendations found
+              About this event
             </h3>
 
-            <p className="mt-3 text-slate-500">
-              We couldn't find events matching your current profile.
+            <p className="mt-4 leading-8 text-slate-600">
+              {event.description ||
+                "No description available for this event."}
             </p>
+          </div>
+
+
+          {/* =================================================
+              EVENT INFORMATION
+          ================================================= */}
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+
+            {/* Location */}
+
+            <div className="rounded-2xl border border-purple-100 bg-purple-50 p-6">
+              <p className="text-sm font-semibold text-purple-600">
+                Location
+              </p>
+
+              <p className="mt-2 text-lg font-semibold text-slate-900">
+                📍 {event.location || "Not specified"}
+              </p>
+            </div>
+
+
+            {/* Mode */}
+
+            <div className="rounded-2xl border border-purple-100 bg-purple-50 p-6">
+              <p className="text-sm font-semibold text-purple-600">
+                Mode
+              </p>
+
+              <p className="mt-2 text-lg font-semibold text-slate-900">
+                💻 {event.mode || "Not specified"}
+              </p>
+            </div>
+
+
+            {/* Start Date */}
+
+            <div className="rounded-2xl border border-purple-100 bg-purple-50 p-6">
+              <p className="text-sm font-semibold text-purple-600">
+                Start Date
+              </p>
+
+              <p className="mt-2 text-lg font-semibold text-slate-900">
+                🗓 {formattedStartDate}
+              </p>
+            </div>
+
+
+            {/* End Date */}
+
+            <div className="rounded-2xl border border-purple-100 bg-purple-50 p-6">
+              <p className="text-sm font-semibold text-purple-600">
+                End Date
+              </p>
+
+              <p className="mt-2 text-lg font-semibold text-slate-900">
+                🗓 {formattedEndDate}
+              </p>
+            </div>
+
+
+            {/* Duration */}
+
+            <div className="rounded-2xl border border-purple-100 bg-purple-50 p-6">
+              <p className="text-sm font-semibold text-purple-600">
+                Duration
+              </p>
+
+              <p className="mt-2 text-lg font-semibold text-slate-900">
+                ⏱ {event.duration_days || "Not specified"} day(s)
+              </p>
+            </div>
+
+
+            {/* Cost */}
+
+            <div className="rounded-2xl border border-purple-100 bg-purple-50 p-6">
+              <p className="text-sm font-semibold text-purple-600">
+                Cost
+              </p>
+
+              <p className="mt-2 text-lg font-semibold text-slate-900">
+                💰 {cost}
+              </p>
+            </div>
 
           </div>
 
-        </section>
-      )}
+
+          {/* =================================================
+              REGISTRATION
+          ================================================= */}
+
+          <div className="mt-8 rounded-3xl border border-purple-100 bg-white p-8 shadow-lg shadow-purple-100">
+
+            <h3 className="text-2xl font-bold">
+              Registration Details
+            </h3>
+
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+
+              <div>
+                <p className="text-sm font-semibold text-slate-500">
+                  Registration Deadline
+                </p>
+
+                <p className="mt-2 font-semibold text-slate-900">
+                  {event.registration_deadline
+                    ? new Date(
+                        event.registration_deadline
+                      ).toLocaleDateString("en-IN", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      })
+                    : "Not specified"}
+                </p>
+              </div>
 
 
-      {/* =================================================
-          EVENT CARDS
-      ================================================= */}
+              <div>
+                <p className="text-sm font-semibold text-slate-500">
+                  Organizer
+                </p>
 
-      {events.length > 0 && (
-        <section className="px-6 pb-16">
-
-          <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
-
-            {events.map((event) => {
-
-              // -----------------------------------------
-              // Convert backend score into 0-100%
-              // -----------------------------------------
-              const rawScore = Number(event.score) || 0;
-
-              const matchPercentage = Math.min(
-                Math.round(rawScore),
-                100
-              );
-
-              // -----------------------------------------
-              // Format date
-              // -----------------------------------------
-              const formattedDate = event.start_date
-                ? new Date(event.start_date).toLocaleDateString(
-                    "en-IN",
-                    {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                    }
-                  )
-                : "Date not specified";
-
-              // -----------------------------------------
-              // Format cost
-              // -----------------------------------------
-              const cost =
-                event.cost_inr !== null &&
-                event.cost_inr !== undefined &&
-                event.cost_inr !== ""
-                  ? `₹${Number(event.cost_inr).toFixed(2)}`
-                  : "Free";
-
-              return (
-                <div
-                  key={event.event_id}
-                  className="group flex flex-col rounded-3xl border border-purple-100 bg-white p-6 shadow-lg shadow-purple-100 transition hover:-translate-y-1 hover:border-purple-300 hover:shadow-xl"
-                >
-
-                  {/* -----------------------------------
-                      Event Type + Match
-                  ----------------------------------- */}
-
-                  <div className="flex items-center justify-between">
-
-                    <span className="rounded-full bg-purple-100 px-3 py-1 text-sm font-semibold text-purple-700">
-                      {event.event_type || "Event"}
-                    </span>
-
-                    <span className="text-lg font-bold text-purple-600">
-                      {matchPercentage}% Match
-                    </span>
-
-                  </div>
+                <p className="mt-2 font-semibold text-slate-900">
+                  {event.organizer || "Not specified"}
+                </p>
+              </div>
 
 
-                  {/* -----------------------------------
-                      Event Title
-                  ----------------------------------- */}
+              <div>
+                <p className="text-sm font-semibold text-slate-500">
+                  Team Size
+                </p>
 
-                  <h3 className="mt-6 text-2xl font-bold">
-                    {event.title}
-                  </h3>
+                <p className="mt-2 font-semibold text-slate-900">
+                  {event.min_team_size || "—"} -{" "}
+                  {event.max_team_size || "—"} members
+                </p>
+              </div>
 
-
-                  {/* -----------------------------------
-                      Description
-                  ----------------------------------- */}
-
-                  <p className="mt-3 text-slate-500">
-                    {event.description}
-                  </p>
-
-
-                  {/* -----------------------------------
-                      Event Details
-                  ----------------------------------- */}
-
-                  <div className="mt-6 space-y-2 text-sm text-slate-600">
-
-                    <p>
-                      📍 {event.location || "Location not specified"}
-                    </p>
-
-                    <p>
-                      🗓 {formattedDate}
-                    </p>
-
-                    <p>
-                      💻 {event.mode || "Mode not specified"}
-                    </p>
-
-                    <p>
-                      💰 {cost}
-                    </p>
-
-                  </div>
-
-
-                  {/* -----------------------------------
-                      Why this matches you
-                  ----------------------------------- */}
-
-                  <div className="mt-6">
-
-                    <p className="mb-3 text-sm font-semibold">
-                      Why this matches you
-                    </p>
-
-                    <div className="space-y-2">
-
-                      {Array.isArray(event.reasons) &&
-                        event.reasons.map((reason, index) => (
-                          <div
-                            key={`${event.event_id}-reason-${index}`}
-                            className="rounded-xl bg-purple-50 px-3 py-2 text-sm text-purple-700"
-                          >
-                            {reason}
-                          </div>
-                        ))}
-
-                    </div>
-
-                  </div>
-
-
-                  {/* -----------------------------------
-                      Matching Information
-                  ----------------------------------- */}
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-
-                    {event.matching_skills > 0 && (
-                      <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600">
-                        {event.matching_skills} skill match
-                        {event.matching_skills > 1 ? "es" : ""}
-                      </span>
-                    )}
-
-                    {event.interest_matches > 0 && (
-                      <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600">
-                        {event.interest_matches} interest match
-                        {event.interest_matches > 1 ? "es" : ""}
-                      </span>
-                    )}
-
-                  </div>
-
-
-                  {/* -----------------------------------
-                      VIEW EVENT
-                  ----------------------------------- */}
-
-                  <a
-                    href={`/events/${event.event_id}`}
-                    className="mt-6 block w-full rounded-xl bg-gradient-to-r from-purple-600 to-violet-500 py-3 text-center font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-lg"
-                  >
-                    View Event
-                  </a>
-
-                </div>
-              );
-            })}
+            </div>
 
           </div>
 
-        </section>
-      )}
+
+          {/* =================================================
+              ELIGIBILITY
+          ================================================= */}
+
+          {event.eligibility && (
+            <div className="mt-8 rounded-3xl border border-purple-100 bg-purple-50 p-8">
+
+              <h3 className="text-2xl font-bold">
+                Eligibility
+              </h3>
+
+              <p className="mt-4 leading-7 text-slate-600">
+                {event.eligibility}
+              </p>
+
+            </div>
+          )}
+
+
+          {/* =================================================
+              BACK BUTTON
+          ================================================= */}
+
+          <div className="mt-10">
+            <a
+              href="/recommendations"
+              className="inline-block rounded-xl bg-gradient-to-r from-purple-600 to-violet-500 px-8 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              ← Back to Recommendations
+            </a>
+          </div>
+
+        </div>
+      </section>
 
     </main>
   );
